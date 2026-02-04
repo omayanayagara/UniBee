@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Notice - UniBee Admin</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Sidebar (Admin) -->
+        <aside class="sidebar admin-sidebar">
+            <div class="brand">
+                <div class="logo-icon" style="background: transparent;">
+                    <img src="assets/logo.png" alt="UniBee">
+                </div>
+                <h1>UniBee Admin</h1>
+            </div>
+
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-item">
+                    <span class="material-symbols-rounded">dashboard</span>
+                    <span>Student View</span>
+                </a>
+                <a href="admin.html" class="nav-item">
+                    <span class="material-symbols-rounded">admin_panel_settings</span>
+                    <span>Admin Panel</span>
+                </a>
+                <a href="#" class="nav-item active">
+                    <span class="material-symbols-rounded">edit_square</span>
+                    <span>Create Notice</span>
+                </a>
+            </nav>
+
+            <div class="user-profile">
+                <img src="https://ui-avatars.com/api/?name=Admin+User&background=FDE047&color=1F2937&bold=true"
+                    alt="Profile" class="avatar">
+                <div class="user-info">
+                    <span class="name">Admin User</span>
+                    <span class="role">Super Admin</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="top-header">
+                <div class="header-left">
+                    <a href="admin.html" class="icon-btn back-btn">
+                        <span class="material-symbols-rounded">arrow_back</span>
+                    </a>
+                    <h2 class="page-title">Create New Notice</h2>
+                </div>
+            </header>
+
+            <div class="content-wrapper">
+                <form class="create-form-card" action="admin.html">
+                    <div class="form-section">
+                        <label for="notice-title">Notice Title</label>
+                        <input type="text" id="notice-title" class="form-input"
+                            placeholder="e.g. Annual Sports Day 2026" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-section half">
+                            <label for="category">Category</label>
+                            <select id="category" class="form-select">
+                                <option value="academic">Academic</option>
+                                <option value="event">Event</option>
+                                <option value="system">System / Maintenance</option>
+                                <option value="sports">Sports</option>
+                            </select>
+                        </div>
+                        <div class="form-section half">
+                            <label for="date">Publish Date</label>
+                            <input type="date" id="date" class="form-input">
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <label for="description">Content / Description</label>
+                        <textarea id="description" class="form-textarea" rows="8"
+                            placeholder="Enter the full details of the notice..."></textarea>
+                    </div>
+
+                    <div class="form-section">
+                        <label>Attachment / Media</label>
+                        <div class="file-upload-area">
+                            <span class="material-symbols-rounded">cloud_upload</span>
+                            <p>Drag & drop files here or <strong>browse</strong></p>
+                            <span class="upload-hint">Supports JPG, PNG, PDF (Max 10MB)</span>
+                        </div>
+                    </div>
+
+                    <div class="form-actions-footer">
+                        <button type="button" class="btn-secondary"
+                            onclick="window.location.href='admin.html'">Cancel</button>
+                        <button type="submit" class="btn-primary">Publish Notice</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notice Details - UniBee</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Sidebar (Reused for consistent layout) -->
+        <aside class="sidebar admin-sidebar">
+            <div class="brand">
+                <div class="logo-icon" style="background: transparent;">
+                    <img src="assets/logo.png" alt="UniBee">
+                </div>
+                <h1>UniBee</h1>
+            </div>
+
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-item">
+                    <span class="material-symbols-rounded">dashboard</span>
+                    <span>Dashboard</span>
+                </a>
+                <a href="notice-board.html" class="nav-item">
+                    <span class="material-symbols-rounded">campaign</span>
+                    <span>Notice Board</span>
+                </a>
+                <a href="schedule.html" class="nav-item">
+                    <span class="material-symbols-rounded">calendar_month</span>
+                    <span>Schedule</span>
+                </a>
+                <a href="students.html" class="nav-item">
+                    <span class="material-symbols-rounded">groups</span>
+                    <span>Students</span>
+                </a>
+                <a href="analytics.html" class="nav-item">
+                    <span class="material-symbols-rounded">analytics</span>
+                    <span>Analytics</span>
+                </a>
+                <a href="settings.html" class="nav-item">
+                    <span class="material-symbols-rounded">settings</span>
+                    <span>Settings</span>
+                </a>
+            </nav>
+
+            <div class="user-profile">
+                <img src="https://ui-avatars.com/api/?name=Admin+User&background=FDE047&color=1F2937&bold=true"
+                    alt="Profile" class="avatar">
+                <div class="user-info">
+                    <span class="name">Admin User</span>
+                    <span class="role">Administrator</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="top-header">
+                <div class="header-left">
+                    <a href="index.html" class="icon-btn back-btn">
+                        <span class="material-symbols-rounded">arrow_back</span>
+                    </a>
+                    <h2 class="page-title">Notice Details</h2>
+                </div>
+                <div class="header-actions">
+                    <button class="icon-btn">
+                        <span class="material-symbols-rounded">notifications</span>
+                    </button>
+                    <button class="icon-btn">
+                        <span class="material-symbols-rounded">chat</span>
+                    </button>
+                </div>
+            </header>
+
+            <div class="content-wrapper">
+                <div class="detail-card">
+                    <div class="detail-header">
+                        <div class="meta-tags">
+                            <span class="badge-tag category">Academic</span>
+                            <span class="badge-tag date">
+                                <span class="material-symbols-rounded">calendar_today</span>
+                                Feb 12, 2026
+                            </span>
+                        </div>
+                        <h1>Final Exam Schedule Released</h1>
+                    </div>
+
+                    <div class="media-preview">
+                        <div class="placeholder-media">
+                            <span class="material-symbols-rounded">image</span>
+                            <p>Event Flyer / Video Preview</p>
+                        </div>
+                    </div>
+
+                    <div class="detail-body">
+                        <p>The final exam schedule for the Spring 2026 semester has been officially released. Students
+                            are advised to check their respective student portals for their personalized exam dates and
+                            venues.</p>
+                        <p>Please note that no changes will be allowed unless there is a conflict in timing as per
+                            university policy.</p>
+
+                        <h3>Key Instructions:</h3>
+                        <ul>
+                            <li>Carry your student ID card.</li>
+                            <li>Report 30 minutes before the exam time.</li>
+                            <li>Electronic gadgets are strictly prohibited.</li>
+                        </ul>
+                    </div>
+
+                    <div class="detail-actions">
+                        <button class="btn-primary">
+                            <span class="material-symbols-rounded">notification_add</span>
+                            Set Reminder
+                        </button>
+                        <button class="btn-secondary">
+                            <span class="material-symbols-rounded">share</span>
+                            Share
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
