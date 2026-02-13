@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students - UniBee Admin</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Sidebar (Admin) -->
+        <aside class="sidebar admin-sidebar">
+            <div class="brand">
+                <div class="logo-icon" style="background: transparent;">
+                    <img src="assets/logo.png" alt="UniBee">
+                </div>
+                <h1>UniBee Admin</h1>
+            </div>
+
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-item">
+                    <span class="material-symbols-rounded">dashboard</span>
+                    <span>Student View</span>
+                </a>
+                <a href="admin.html" class="nav-item">
+                    <span class="material-symbols-rounded">admin_panel_settings</span>
+                    <span>Dashboard</span>
+                </a>
+                <a href="notice-board.html" class="nav-item">
+                    <span class="material-symbols-rounded">campaign</span>
+                    <span>Notice Board</span>
+                </a>
+                <a href="schedule.html" class="nav-item">
+                    <span class="material-symbols-rounded">calendar_month</span>
+                    <span>Schedule</span>
+                </a>
+                <a href="#" class="nav-item active">
+                    <span class="material-symbols-rounded">groups</span>
+                    <span>Students</span>
+                </a>
+                <a href="analytics.html" class="nav-item">
+                    <span class="material-symbols-rounded">analytics</span>
+                    <span>Analytics</span>
+                </a>
+                <a href="settings.html" class="nav-item">
+                    <span class="material-symbols-rounded">settings</span>
+                    <span>Settings</span>
+                </a>
+            </nav>
+
+            <div class="user-profile">
+                <img src="https://ui-avatars.com/api/?name=Admin+User&background=FDE047&color=1F2937&bold=true"
+                    alt="Profile" class="avatar">
+                <div class="user-info">
+                    <span class="name">Admin User</span>
+                    <span class="role">Administrator</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="top-header">
+                <button class="menu-toggle" id="menuToggle">
+                    <span class="material-symbols-rounded">menu</span>
+                </button>
+                <div class="header-search">
+                    <span class="material-symbols-rounded">search</span>
+                    <input type="text" placeholder="Search students...">
+                </div>
+                <h2 class="page-title">Student Directory</h2>
+            </header>
+
+            <div class="content-wrapper">
+                <div class="page-header">
+                    <h2>All Students</h2>
+                    <div class="header-actions">
+                        <button class="btn-secondary">Export</button>
+                        <button class="btn-primary">Add Student</button>
+                    </div>
+                </div>
+
+                <div class="card table-card">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Registration No.</th>
+                                <th>Faculty</th>
+                                <th>Year</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="user-cell">
+                                        <img src="https://ui-avatars.com/api/?name=Alex+Johnson&background=random"
+                                            class="avatar small">
+                                        <span>Alex Johnson</span>
+                                    </div>
+                                </td>
+                                <td>UNI2023001</td>
+                                <td>Computer Science</td>
+                                <td>3rd Year</td>
+                                <td><span class="status-badge active">Active</span></td>
+                                <td><button class="icon-btn small"><span
+                                            class="material-symbols-rounded">more_vert</span></button></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="user-cell">
+                                        <img src="https://ui-avatars.com/api/?name=Sarah+Smith&background=random"
+                                            class="avatar small">
+                                        <span>Sarah Smith</span>
+                                    </div>
+                                </td>
+                                <td>UNI2023045</td>
+                                <td>Engineering</td>
+                                <td>2nd Year</td>
+                                <td><span class="status-badge active">Active</span></td>
+                                <td><button class="icon-btn small"><span
+                                            class="material-symbols-rounded">more_vert</span></button></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="user-cell">
+                                        <img src="https://ui-avatars.com/api/?name=Mike+Brown&background=random"
+                                            class="avatar small">
+                                        <span>Mike Brown</span>
+                                    </div>
+                                </td>
+                                <td>UNI2023102</td>
+                                <td>Business</td>
+                                <td>4th Year</td>
+                                <td><span class="status-badge inactive">Inactive</span></td>
+                                <td><button class="icon-btn small"><span
+                                            class="material-symbols-rounded">more_vert</span></button></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="user-cell">
+                                        <img src="https://ui-avatars.com/api/?name=Emily+Davis&background=random"
+                                            class="avatar small">
+                                        <span>Emily Davis</span>
+                                    </div>
+                                </td>
+                                <td>UNI2024012</td>
+                                <td>Arts & Design</td>
+                                <td>1st Year</td>
+                                <td><span class="status-badge active">Active</span></td>
+                                <td><button class="icon-btn small"><span
+                                            class="material-symbols-rounded">more_vert</span></button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
