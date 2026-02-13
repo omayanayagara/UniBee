@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (createNoticeForm) {
         createNoticeForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            
+
             // Collect Data
             const title = document.getElementById('notice-title').value;
             const category = document.getElementById('category').value;
@@ -223,5 +223,113 @@ document.addEventListener('DOMContentLoaded', () => {
     bars.forEach((bar, index) => {
         // Animation logic if specific class exists
         // simplified for general usage
+    });
+
+    // ===== SEARCH BAR LOGIC =====
+    const dashboardSearch = document.getElementById('dashboardSearch');
+    if (dashboardSearch) {
+        dashboardSearch.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase().trim();
+
+            // Search Notice Cards in dashboard
+            const dashNotices = document.querySelectorAll('.notice-list .notice-card, .notice-card[data-category]');
+            dashNotices.forEach(card => {
+                const text = card.textContent.toLowerCase();
+                if (query === '' || text.includes(query)) {
+                    card.classList.remove('search-hidden');
+                } else {
+                    card.classList.add('search-hidden');
+                }
+            });
+
+            // Search Stat Cards
+            const statCards = document.querySelectorAll('.stat-card');
+            statCards.forEach(card => {
+                const text = card.textContent.toLowerCase();
+                if (query === '' || text.includes(query)) {
+                    card.classList.remove('search-hidden');
+                } else {
+                    card.classList.add('search-hidden');
+                }
+            });
+
+            // Search Admin Notice Items
+            const adminItems = document.querySelectorAll('.admin-notice-item');
+            adminItems.forEach(item => {
+                const text = item.textContent.toLowerCase();
+                if (query === '' || text.includes(query)) {
+                    item.classList.remove('search-hidden');
+                } else {
+                    item.classList.add('search-hidden');
+                }
+            });
+        });
+    }
+
+    // ===== NOTIFICATION DROPDOWN LOGIC =====
+    const notifBtn = document.getElementById('notificationBtn');
+    const notifDropdown = document.getElementById('notificationDropdown');
+    const markAllReadBtn = document.getElementById('markAllRead');
+    const notifBadge = document.getElementById('notifBadge');
+
+    if (notifBtn && notifDropdown) {
+        notifBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            notifDropdown.classList.toggle('show');
+        });
+
+        // Close on outside click
+        document.addEventListener('click', (e) => {
+            if (notifDropdown.classList.contains('show') && !notifDropdown.contains(e.target)) {
+                notifDropdown.classList.remove('show');
+            }
+        });
+
+        // Mark All Read
+        if (markAllReadBtn) {
+            markAllReadBtn.addEventListener('click', () => {
+                document.querySelectorAll('.notif-item.unread').forEach(item => {
+                    item.classList.remove('unread');
+                });
+                if (notifBadge) {
+                    notifBadge.style.display = 'none';
+                }
+                showToast('All notifications marked as read.');
+            });
+        }
+
+        // Click individual notification to mark read
+        document.querySelectorAll('.notif-item').forEach(item => {
+            item.addEventListener('click', () => {
+                item.classList.remove('unread');
+                // Update badge count
+                const remaining = document.querySelectorAll('.notif-item.unread').length;
+                if (notifBadge) {
+                    if (remaining === 0) {
+                        notifBadge.style.display = 'none';
+                    } else {
+                        notifBadge.textContent = remaining;
+                    }
+                }
+            });
+        });
+    }
+
+    // ===== ANALYTICS CHART LABELS (index.html) =====
+    const chartLabels = ['Lectures', 'Seminars', 'Workshops', 'Exams', 'Projects', 'Social', 'Sports'];
+    const barElements = document.querySelectorAll('.bar-chart-mock .bar');
+    barElements.forEach((bar, i) => {
+        if (chartLabels[i]) {
+            bar.setAttribute('title', chartLabels[i]);
+            // Add a label below
+            if (!bar.querySelector('.bar-label')) {
+                const label = document.createElement('span');
+                label.className = 'bar-label';
+                label.textContent = chartLabels[i];
+                label.style.cssText = 'position:absolute;bottom:-22px;left:50%;transform:translateX(-50%);font-size:0.7rem;color:var(--text-muted);white-space:nowrap;';
+                bar.style.position = 'relative';
+                bar.appendChild(label);
+            }
+        }
     });
 });

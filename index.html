@@ -69,13 +69,47 @@
                 </button>
                 <div class="header-search">
                     <span class="material-symbols-rounded">search</span>
-                    <input type="text" placeholder="Search...">
+                    <input type="text" placeholder="Search..." id="dashboardSearch">
                 </div>
                 <div class="header-actions">
-                    <button class="icon-btn">
-                        <span class="material-symbols-rounded">notifications</span>
-                        <span class="badge">3</span>
-                    </button>
+                    <div class="notification-wrapper">
+                        <button class="icon-btn" id="notificationBtn">
+                            <span class="material-symbols-rounded">notifications</span>
+                            <span class="badge" id="notifBadge">3</span>
+                        </button>
+                        <div class="notification-dropdown" id="notificationDropdown">
+                            <div class="notif-header">
+                                <h4>Notifications</h4>
+                                <button class="notif-mark-read" id="markAllRead">Mark all read</button>
+                            </div>
+                            <div class="notif-list">
+                                <div class="notif-item unread">
+                                    <span class="material-symbols-rounded notif-icon"
+                                        style="color: var(--info);">school</span>
+                                    <div class="notif-content">
+                                        <p><strong>Final Exam Schedule</strong> has been updated.</p>
+                                        <span class="notif-time">2 hours ago</span>
+                                    </div>
+                                </div>
+                                <div class="notif-item unread">
+                                    <span class="material-symbols-rounded notif-icon"
+                                        style="color: #7E22CE;">festival</span>
+                                    <div class="notif-content">
+                                        <p><strong>Cultural Fest 'BeeHive'</strong> registration open!</p>
+                                        <span class="notif-time">5 hours ago</span>
+                                    </div>
+                                </div>
+                                <div class="notif-item unread">
+                                    <span class="material-symbols-rounded notif-icon"
+                                        style="color: var(--success);">sports_soccer</span>
+                                    <div class="notif-content">
+                                        <p><strong>Football Tryouts</strong> start next Monday.</p>
+                                        <span class="notif-time">1 day ago</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <a href="admin.html" class="icon-btn" title="Admin Dashboard" style="text-decoration: none;">
                         <span class="material-symbols-rounded">admin_panel_settings</span>
                     </a>
@@ -85,7 +119,7 @@
             <div class="content-wrapper">
                 <div class="page-header">
                     <h2>Dashboard Overview</h2>
-                    <button class="btn-primary">
+                    <button class="btn-primary" id="newReportBtn" onclick="window.location.href='create-notice.html'">
                         <span class="material-symbols-rounded">add</span>
                         New Report
                     </button>
@@ -96,7 +130,8 @@
                         <h2>Welcome back, Alex! 👋</h2>
                         <p>You have 3 new notices and 1 upcoming event today.</p>
                     </div>
-                    <img src="assets/mascot.png" alt="UniBee Mascot" style="height: 120px; margin-right: 20px;">
+                    <img src="assets/mascot.png" alt="UniBee Mascot" class="moving-bee"
+                        style="height: 120px; margin-right: 20px;">
                 </div>
 
                 <!-- Stats Cards -->

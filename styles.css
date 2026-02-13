@@ -1601,3 +1601,168 @@ input:checked+.slider:before {
 .toast .material-symbols-rounded {
     color: var(--success);
 }
+
+/* ===== 3D Bee Animation ===== */
+.moving-bee {
+    mix-blend-mode: multiply;
+    animation: floatBee 4s ease-in-out infinite;
+    transform-origin: center center;
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.15));
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.moving-bee:hover {
+    animation-play-state: paused;
+    transform: scale(1.15) rotate(-5deg);
+}
+
+@keyframes floatBee {
+    0% {
+        transform: translateY(0px) rotate(0deg) scale(1);
+    }
+
+    15% {
+        transform: translateY(-12px) rotate(4deg) scale(1.03);
+    }
+
+    30% {
+        transform: translateY(-6px) rotate(-2deg) scale(1.01);
+    }
+
+    50% {
+        transform: translateY(-18px) rotate(6deg) scale(1.05);
+    }
+
+    70% {
+        transform: translateY(-4px) rotate(-3deg) scale(1.02);
+    }
+
+    85% {
+        transform: translateY(-10px) rotate(2deg) scale(1.01);
+    }
+
+    100% {
+        transform: translateY(0px) rotate(0deg) scale(1);
+    }
+}
+
+/* ===== Notification Dropdown ===== */
+.notification-wrapper {
+    position: relative;
+}
+
+.notification-dropdown {
+    position: absolute;
+    top: calc(100% + 12px);
+    right: 0;
+    width: 360px;
+    background: var(--bg-card);
+    backdrop-filter: blur(16px);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-float);
+    border: 1px solid var(--border-color);
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px) scale(0.97);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+}
+
+.notification-dropdown.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+}
+
+.notif-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.notif-header h4 {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.notif-mark-read {
+    background: none;
+    border: none;
+    color: var(--info);
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    padding: 4px 8px;
+    border-radius: 6px;
+    transition: var(--transition);
+}
+
+.notif-mark-read:hover {
+    background-color: var(--info-light);
+}
+
+.notif-list {
+    max-height: 320px;
+    overflow-y: auto;
+}
+
+.notif-item {
+    display: flex;
+    gap: 12px;
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--border-color);
+    transition: var(--transition);
+    cursor: pointer;
+    align-items: flex-start;
+}
+
+.notif-item:last-child {
+    border-bottom: none;
+}
+
+.notif-item:hover {
+    background-color: var(--bg-body);
+}
+
+.notif-item.unread {
+    background-color: rgba(253, 224, 71, 0.06);
+    border-left: 3px solid var(--primary-color);
+}
+
+.notif-item.unread:hover {
+    background-color: rgba(253, 224, 71, 0.12);
+}
+
+.notif-icon {
+    font-size: 22px;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.notif-content p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: var(--text-main);
+    margin: 0;
+}
+
+.notif-content .notif-time {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 4px;
+    display: block;
+}
+
+/* ===== Search highlight ===== */
+.search-hidden {
+    display: none !important;
+}
+
+.search-highlight {
+    box-shadow: 0 0 0 2px var(--primary-color);
+}
