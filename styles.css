@@ -2106,8 +2106,16 @@ input:checked+.slider:before {
     cursor: pointer;
     transition: transform 0.3s ease;
     /* Radial mask to remove the white square edges */
-    -webkit-mask-image: radial-gradient(ellipse 70% 70% at center, black 60%, transparent 100%);
-    mask-image: radial-gradient(ellipse 70% 70% at center, black 60%, transparent 100%);
+    -webkit-mask-image: radial-gradient(ellipse 65% 65% at center, black 55%, transparent 90%);
+    mask-image: radial-gradient(ellipse 65% 65% at center, black 55%, transparent 90%);
+}
+
+/* Dark mode: multiply doesn't hide white on dark bg, use screen instead */
+body.dark-mode .moving-bee {
+    mix-blend-mode: screen;
+    filter: drop-shadow(0 8px 16px rgba(253, 224, 71, 0.2)) brightness(0.95);
+    -webkit-mask-image: radial-gradient(ellipse 60% 60% at center, black 50%, transparent 85%);
+    mask-image: radial-gradient(ellipse 60% 60% at center, black 50%, transparent 85%);
 }
 
 .moving-bee:hover {
