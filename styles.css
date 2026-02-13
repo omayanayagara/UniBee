@@ -108,20 +108,289 @@ input,
 }
 
 body.dark-mode {
-    --bg-body: #111827;
-    --bg-card: rgba(31, 41, 55, 0.7);
-    --bg-sidebar: #1F2937;
-    --text-main: #F9FAFB;
-    --text-muted: #9CA3AF;
-    --border-color: #374151;
-    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
-    --shadow-card: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+    /* Core palette */
+    --bg-body: #0F172A;
+    --bg-card: rgba(30, 41, 59, 0.85);
+    --bg-sidebar: #1E293B;
+    --text-main: #F1F5F9;
+    --text-muted: #94A3B8;
+    --border-color: #334155;
 
-    /* Adjust semantic colors for dark mode if needed */
-    --info-light: rgba(59, 130, 246, 0.2);
-    --success-light: rgba(16, 185, 129, 0.2);
-    --purple-light: rgba(168, 85, 247, 0.2);
+    /* Shadows for dark backgrounds */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.4);
+    --shadow-card: 0 4px 12px -2px rgba(0, 0, 0, 0.4), 0 8px 24px -4px rgba(0, 0, 0, 0.3);
+    --shadow-card-hover: 0 8px 30px -4px rgba(0, 0, 0, 0.5), 0 16px 40px -8px rgba(0, 0, 0, 0.4);
+    --shadow-float: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+    --shadow-glow-yellow: 0 8px 24px -4px rgba(253, 224, 71, 0.25);
+    --shadow-glow-blue: 0 8px 24px -4px rgba(59, 130, 246, 0.2);
+
+    /* Semantic light backgrounds - darker, richer tones */
+    --info-light: rgba(59, 130, 246, 0.15);
+    --success-light: rgba(16, 185, 129, 0.15);
+    --purple-light: rgba(168, 85, 247, 0.15);
     --yellow-light: rgba(253, 224, 71, 0.1);
+
+    /* Primary adjustments for dark */
+    --primary-color: #FACC15;
+    --primary-hover: #EAB308;
+    --primary-text: #422006;
+}
+
+/* ---- Dark Mode Component Overrides ---- */
+
+/* Cards glassmorphism for dark */
+body.dark-mode .card {
+    background-color: rgba(30, 41, 59, 0.75);
+    border: 1px solid rgba(71, 85, 105, 0.4);
+    backdrop-filter: blur(16px);
+}
+
+/* Sidebar */
+body.dark-mode .sidebar {
+    background-color: #1E293B;
+    border-right-color: #334155;
+}
+
+/* Header */
+body.dark-mode .top-header {
+    background-color: rgba(30, 41, 59, 0.9);
+    border-bottom-color: #334155;
+    backdrop-filter: blur(12px);
+}
+
+body.dark-mode .header-search {
+    background-color: rgba(15, 23, 42, 0.6);
+    border: 1px solid #334155;
+    color: #94A3B8;
+}
+
+body.dark-mode .header-search input {
+    color: #F1F5F9;
+}
+
+/* Nav items */
+body.dark-mode .nav-item:hover {
+    background-color: rgba(253, 224, 71, 0.08);
+    color: #FACC15;
+}
+
+body.dark-mode .nav-item.active {
+    background-color: rgba(253, 224, 71, 0.1);
+    color: #FACC15;
+}
+
+/* Icon buttons */
+body.dark-mode .icon-btn {
+    border-color: #475569;
+    color: #94A3B8;
+}
+
+body.dark-mode .icon-btn:hover {
+    background-color: rgba(253, 224, 71, 0.1);
+    border-color: rgba(253, 224, 71, 0.4);
+    color: #FACC15;
+}
+
+/* Welcome Banner */
+body.dark-mode .welcome-banner.gradient-bg {
+    background: linear-gradient(135deg, rgba(250, 204, 21, 0.2) 0%, rgba(253, 224, 71, 0.08) 100%);
+    border: 1px solid rgba(253, 224, 71, 0.2);
+    box-shadow: 0 8px 30px -8px rgba(253, 224, 71, 0.15);
+}
+
+body.dark-mode .welcome-text h2 {
+    color: #FACC15;
+}
+
+body.dark-mode .welcome-text p {
+    color: #FDE68A;
+}
+
+/* Note: dark mode .yellow-light / .purple-light / .green-light are in the 3D icon section below */
+
+/* Trend colors in dark */
+body.dark-mode .trend.up {
+    color: #34D399;
+}
+
+body.dark-mode .trend.down {
+    color: #F87171;
+}
+
+/* Notice cards */
+body.dark-mode .notice-card {
+    background-color: rgba(253, 224, 71, 0.06);
+    border-color: rgba(253, 224, 71, 0.2);
+}
+
+body.dark-mode .notice-content h4 {
+    color: #F1F5F9;
+}
+
+body.dark-mode .notice-content p {
+    color: #94A3B8;
+}
+
+body.dark-mode .notice-icon {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+/* Admin notice items */
+body.dark-mode .admin-notice-item {
+    border-bottom-color: #334155;
+}
+
+body.dark-mode .admin-notice-item:hover {
+    background-color: rgba(30, 41, 59, 0.5);
+}
+
+/* Badge */
+body.dark-mode .badge {
+    box-shadow: 0 0 8px rgba(239, 68, 68, 0.4);
+}
+
+/* User profile */
+body.dark-mode .user-profile {
+    border-top-color: #334155;
+}
+
+/* Buttons */
+body.dark-mode .btn-primary {
+    box-shadow: 0 6px 20px -4px rgba(250, 204, 21, 0.3);
+}
+
+body.dark-mode .btn-secondary {
+    border-color: #475569;
+    color: #F1F5F9;
+}
+
+body.dark-mode .btn-secondary:hover {
+    background-color: rgba(30, 41, 59, 0.5);
+}
+
+/* Inputs */
+body.dark-mode .form-input,
+body.dark-mode .form-select,
+body.dark-mode .form-textarea,
+body.dark-mode .select-input {
+    background-color: rgba(15, 23, 42, 0.5);
+    border-color: #475569;
+    color: #F1F5F9;
+}
+
+body.dark-mode .input-wrapper input {
+    color: #F1F5F9;
+    background: transparent;
+}
+
+body.dark-mode .input-wrapper input:focus {
+    border-color: #FACC15;
+    box-shadow: 0 0 0 3px rgba(250, 204, 21, 0.15);
+}
+
+/* Progress bar */
+body.dark-mode .progress-bar {
+    background-color: #1E293B;
+}
+
+/* Notification dropdown */
+body.dark-mode .notification-dropdown {
+    background: rgba(30, 41, 59, 0.95);
+    border-color: #475569;
+}
+
+body.dark-mode .notif-header {
+    border-bottom-color: #334155;
+}
+
+body.dark-mode .notif-item {
+    border-bottom-color: #334155;
+}
+
+body.dark-mode .notif-item:hover {
+    background-color: rgba(15, 23, 42, 0.5);
+}
+
+body.dark-mode .notif-item.unread {
+    background-color: rgba(250, 204, 21, 0.05);
+    border-left-color: #FACC15;
+}
+
+/* Table */
+body.dark-mode .data-table th {
+    background-color: rgba(15, 23, 42, 0.6);
+    color: #94A3B8;
+    border-bottom-color: #334155;
+}
+
+body.dark-mode .data-table td {
+    border-bottom-color: #334155;
+}
+
+/* Settings */
+body.dark-mode .settings-card .card-header {
+    background-color: rgba(15, 23, 42, 0.4);
+    border-bottom-color: #334155;
+}
+
+body.dark-mode .setting-item {
+    border-bottom-color: #334155;
+}
+
+/* Toggle slider */
+body.dark-mode .slider {
+    background-color: #475569;
+}
+
+/* Filter chips */
+body.dark-mode .filter-chip {
+    border-color: #475569;
+    background-color: rgba(15, 23, 42, 0.5);
+    color: #94A3B8;
+}
+
+body.dark-mode .filter-chip:hover {
+    background-color: rgba(253, 224, 71, 0.08);
+}
+
+body.dark-mode .filter-chip.active {
+    background-color: #FACC15;
+    color: #422006;
+    border-color: #FACC15;
+}
+
+/* Chart bars */
+body.dark-mode .bar,
+body.dark-mode .chart-bar {
+    background-color: #FACC15;
+    opacity: 0.9;
+}
+
+/* Toast */
+body.dark-mode .toast {
+    background-color: #1E293B;
+    border: 1px solid #334155;
+}
+
+/* Auth pages */
+body.dark-mode .auth-card {
+    background: rgba(30, 41, 59, 0.9);
+    border-color: #334155;
+}
+
+/* Font controls */
+body.dark-mode .font-btn.active {
+    background-color: #334155;
+    color: #F1F5F9;
+}
+
+/* Danger button */
+body.dark-mode .icon-btn.danger {
+    color: #F87171;
+}
+
+body.dark-mode .icon-btn.danger:hover {
+    background-color: rgba(239, 68, 68, 0.15);
 }
 
 /* Empty State */
@@ -291,6 +560,26 @@ body {
 /* Material Icons sizing adjustments */
 .nav-item .material-symbols-rounded {
     font-size: 20px;
+    /* 3D icon depth */
+    background: linear-gradient(145deg, rgba(253, 224, 71, 0.15), rgba(253, 224, 71, 0.05));
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.08), -1px -1px 3px rgba(255, 255, 255, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+    transition: var(--transition-bounce);
+}
+
+.nav-item:hover .material-symbols-rounded {
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.12), -1px -1px 3px rgba(255, 255, 255, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    transform: scale(1.08);
+}
+
+body.dark-mode .nav-item .material-symbols-rounded {
+    background: linear-gradient(145deg, rgba(250, 204, 21, 0.12), rgba(250, 204, 21, 0.04));
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3), -1px -1px 3px rgba(255, 255, 255, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
 .user-profile {
@@ -376,7 +665,7 @@ body {
     height: 40px;
     border-radius: 50%;
     border: 1px solid var(--border-color);
-    background: transparent;
+    background: linear-gradient(145deg, #ffffff, #f0f0f0);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -384,18 +673,30 @@ body {
     color: var(--text-muted);
     position: relative;
     transition: var(--transition-bounce);
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.08), -2px -2px 5px rgba(255, 255, 255, 0.9), inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
 .icon-btn:hover {
-    background-color: var(--yellow-light);
+    background: linear-gradient(145deg, #fff9db, #fef3b4);
     color: var(--primary-text);
-    transform: scale(1.1);
+    transform: scale(1.1) translateY(-1px);
     border-color: var(--primary-color);
-    box-shadow: var(--shadow-glow-yellow);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1), -2px -2px 6px rgba(255, 255, 255, 0.9), var(--shadow-glow-yellow);
 }
 
 .icon-btn:active {
     transform: scale(0.95);
+    box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.1), inset -1px -1px 3px rgba(255, 255, 255, 0.5);
+}
+
+body.dark-mode .icon-btn {
+    background: linear-gradient(145deg, #2d3a4f, #1a2536);
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3), -2px -2px 5px rgba(255, 255, 255, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+body.dark-mode .icon-btn:hover {
+    background: linear-gradient(145deg, rgba(250, 204, 21, 0.15), rgba(250, 204, 21, 0.05));
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4), -2px -2px 6px rgba(255, 255, 255, 0.03), 0 6px 18px -4px rgba(250, 204, 21, 0.2);
 }
 
 .badge {
@@ -535,31 +836,68 @@ body {
 .stat-icon {
     width: 56px;
     height: 56px;
-    border-radius: 50%;
+    border-radius: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--text-main);
     transition: var(--transition-bounce);
+    position: relative;
+}
+
+/* 3D raised inner highlight on all stat icons */
+.stat-icon::before {
+    content: '';
+    position: absolute;
+    inset: 2px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.6) 0%, transparent 50%);
+    pointer-events: none;
 }
 
 .stat-card:hover .stat-icon {
-    transform: scale(1.1) rotate(-5deg);
+    transform: scale(1.12) rotate(-5deg) translateY(-2px);
 }
 
 .yellow-light {
-    background-color: var(--yellow-light);
-    color: #B45309;
+    background: linear-gradient(145deg, #FEF9C3, #FDE047);
+    color: #92400E;
+    box-shadow: 4px 4px 10px rgba(253, 224, 71, 0.3), -2px -2px 6px rgba(255, 255, 255, 0.8), inset 0 -2px 4px rgba(180, 83, 9, 0.1);
 }
 
 .purple-light {
-    background-color: var(--purple-light);
-    color: #7E22CE;
+    background: linear-gradient(145deg, #F3E8FF, #D8B4FE);
+    color: #6B21A8;
+    box-shadow: 4px 4px 10px rgba(168, 85, 247, 0.25), -2px -2px 6px rgba(255, 255, 255, 0.8), inset 0 -2px 4px rgba(126, 34, 206, 0.1);
 }
 
 .green-light {
-    background-color: var(--success-light);
-    color: #047857;
+    background: linear-gradient(145deg, #ECFDF5, #6EE7B7);
+    color: #065F46;
+    box-shadow: 4px 4px 10px rgba(16, 185, 129, 0.25), -2px -2px 6px rgba(255, 255, 255, 0.8), inset 0 -2px 4px rgba(4, 120, 87, 0.1);
+}
+
+/* Dark mode 3D icon overrides */
+body.dark-mode .yellow-light {
+    background: linear-gradient(145deg, rgba(253, 224, 71, 0.2), rgba(253, 224, 71, 0.08));
+    color: #FACC15;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3), -2px -2px 6px rgba(255, 255, 255, 0.03), inset 0 -2px 4px rgba(0, 0, 0, 0.15);
+}
+
+body.dark-mode .purple-light {
+    background: linear-gradient(145deg, rgba(168, 85, 247, 0.2), rgba(168, 85, 247, 0.08));
+    color: #C084FC;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3), -2px -2px 6px rgba(255, 255, 255, 0.03), inset 0 -2px 4px rgba(0, 0, 0, 0.15);
+}
+
+body.dark-mode .green-light {
+    background: linear-gradient(145deg, rgba(16, 185, 129, 0.2), rgba(16, 185, 129, 0.08));
+    color: #34D399;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3), -2px -2px 6px rgba(255, 255, 255, 0.03), inset 0 -2px 4px rgba(0, 0, 0, 0.15);
+}
+
+body.dark-mode .stat-icon::before {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, transparent 50%);
 }
 
 .stat-info {
